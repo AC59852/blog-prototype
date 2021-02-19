@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Products from '../views/Products.vue'
+import ProductSpecific from '../views/ProductSpecific.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,21 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/page',
+    name: 'news',
+    component: Products
+  },
+  {
+    path: '/page/:uid',
+    name: 'news-specific',
+    component: ProductSpecific
+  },
+  {
+    path: '/projects/:id',
+    name: 'projectSpecific',
+    component: ProductSpecific
   },
   {
     path: '/about',
@@ -21,7 +38,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
