@@ -405,4 +405,11 @@ textarea {
 
 #container {
     background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 0 20px 5px rgba(131, 131, 131, 0.322);
+    width: 95%;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
 }

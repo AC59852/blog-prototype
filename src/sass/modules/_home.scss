@@ -8,17 +8,22 @@
 
         .topText {
             position: relative;
+            margin-left: 4%;
+            padding-top: 4%;
             h1 {
-                padding-top: 3%;
                 font-family: $header-font;
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 font-weight: 600;
                 letter-spacing: 0.4px;
-                line-height: 2rem;
+                line-height: 1.6rem;
             }
     
             h2 {
-                display: none;
+                font-family: $body-font;
+                font-weight: 600;
+                font-size: 1rem;
+                margin-bottom: 1%;
+                color: rgb(161, 161, 161);
             }
         }
 
@@ -62,7 +67,7 @@
 
                 span {
                     font-family: $body-font;
-                    font-size: 0.85rem;
+                    font-size: 0.83rem;
                     width: 100%;
                     line-height: 1.1rem;
                     display: block;
@@ -75,12 +80,11 @@
     .homeArticles {
         width: 100%;
         h2 {
-            text-align: left;
             font-family: $header-font;
             font-weight: 600;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 3%;
-            margin-left: 3.5%;
+            margin-left: 7.5%;
             line-height: 1.8rem;
         }
         .articlesWrapper {
@@ -110,20 +114,19 @@
                     object-position: top;
                 }
                 h2 {
-                    font-size: 1.13rem;
+                    font-size: 1rem;
                     color: #041e3b;
                     margin-top: 4%;
-                    text-align: left;
                     line-height: 1.4rem;
                 }
     
                 p {
-                    width: 93%;
-                    margin: 2% auto;
+                    width: 85%;
+                    margin: 2% auto 0;
                     font-family: $body-font;
-                    font-size: 0.93rem;
+                    font-size: 0.9rem;
                     color: #474747;
-                    line-height: 1.3rem;
+                    line-height: 1.2rem;
                 }
             }
         }

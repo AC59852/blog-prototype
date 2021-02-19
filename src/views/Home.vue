@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       techArticles: [
-        {id: 1, title: 'Lorem Ipsum Dolonar Set Amit', img: 'tech1', tag: 'tech', previewDesc: 'This is a small preview description of the article'},
+        {id: 1, title: 'Lorem Ipsum Dolonar Set Amit', img: 'tech1', tag: 'tech', previewDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '},
         {id: 2, title: 'Tech Article Two', img: 'tech2', tag: 'tech', previewDesc: 'This is a small preview description of the article'},
         {id: 3, title: 'Tech Article Three', img: 'tech3', tag: 'tech', previewDesc: 'This is a small preview description of the article'},
         {id: 4, title: 'Tech Article Four', img: 'tech4', tag: 'tech', previewDesc: 'This is a small small preview description of the article'},
