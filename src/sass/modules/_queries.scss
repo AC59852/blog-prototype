@@ -1,3 +1,46 @@
+@media screen and (min-width: 411px) {
+    #home {
+        margin-bottom: 10%;
+        .homeIntro {
+            .topText {
+                margin-left: 2%;
+                h1 {
+                    margin-left: 0;
+                    width: 85%;
+                    line-height: 2.3rem;
+                    font-size: 1.8rem;
+                }
+                h2 {
+                    font-size: 1.125rem;
+                }
+            }
+        }
+        #topArticles {
+            margin: 8% 0 6%;
+        }
+        .homeArticles {
+            h2:nth-child(1) {
+                margin-left: 5%;
+            }
+            .articlesWrapper {
+                flex-direction: row;
+                overflow-x: auto;
+
+                .article {
+                    width: 190px;
+                    margin: 0 4% 8% 2%;
+                    flex: 0 0 auto;
+
+                    img {
+                        width: 180px;
+                        height: 130px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1600px) {
     #container {
         width: 95%;

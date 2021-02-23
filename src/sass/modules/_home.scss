@@ -93,14 +93,13 @@
             display: flex;
             flex-direction: column;
             .article {
-                margin: 0 auto;
                 width: 80%;
+                margin: 0 auto 8%;
                 height: 300px;
                 background-color: #ffffff;
                 border-radius: 10px;
                 box-shadow: 0 4px 10px -4px #6f808f9f;
-                text-decoration: none;
-                margin-bottom: 8%;
+                text-decoration: none; 
 
                 &:nth-child(n+5) {
                     display: none;
