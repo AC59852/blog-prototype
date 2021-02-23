@@ -150,6 +150,7 @@
                 margin-left: 2%;
                 font-size: 1.5rem;
                 margin-bottom: 1%;
+                width: 100%;
             }
             .articlesWrapper {
                 flex-direction: row;
@@ -181,6 +182,55 @@
                         line-height: 1.3rem;
                     }
                 }
+            }
+        }
+    }
+
+    .blogPost {
+        .postWrapper {
+            margin-top: 5%;
+            margin-bottom: 3%;
+            .postSmall {
+                width: 62.5rem;
+    
+                h1 {
+                    font-size: 4.25rem;
+                    line-height: 5.25rem;
+                    width: 65%;
+                }
+    
+                div {
+                    p, h1, h2, h3, h4, h5 {
+                        margin: 0 auto 2%;
+                        font-size: 0.98rem;
+                        line-height: 1.6rem;
+                    }
+    
+                    h1, h2, h3, h4, h5 {
+                        font-size: 1.6rem;
+                        margin-top: 4%;
+                    }
+                }
+    
+                .postPreview {
+                    p {
+                      width: 80%;
+                      line-height: 1.5rem;
+                      font-size: 1rem;
+                      margin-top: 0;
+                    }
+                }
+            }
+    
+            .postImage {
+                width: 75%;
+                margin: 0 auto 4%;
+                height: 650px;
+                border-radius: 8px;
+            }
+    
+            .postImage2 {
+                margin-top: 5%;
             }
         }
     }
