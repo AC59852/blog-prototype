@@ -1,12 +1,10 @@
 <template>
   <div class="about page">
-    <h1>This is an about page</h1>
-    <div v-for="news in newsData" :news="news" :key="news.uid" :id="'newsArticle' + news.uid">
-      <router-link :to="'/page/' + news.uid"><h1>{{ $prismic.richTextAsPlain(news.data.title) }}</h1>
-      <prismic-image :field="news.data.image" class="test" :id="'newsImage' + news.uid"/>
+    <div v-for="post in posts" :post="post" :key="post.uid" :id="'postArticle' + post.uid">
+      <router-link :to="'/post/' + post.uid"><h1>{{ $prismic.richTextAsPlain(post.data.title) }}</h1>
+      <prismic-image :field="post.data.image" class="test" :id="'postImage' + post.uid"/>
       </router-link>
-      <prismic-rich-text :class="'firstPara'" :htmlSerializer="anotherHtmlSerializer" :field="news.data.text_block_1"/>
-      <prismic-rich-text :htmlSerializer="anotherHtmlSerializer" :field="news.data.text_block_2"/>
+      <prismic-rich-text :class="'firstPara'" :field="post.data.preview_text"/>
     </div>
   </div>
 </template>
@@ -32,7 +30,7 @@ export default {
   data() {
     return {
       anotherHtmlSerializer,
-      newsData: []
+      posts: []
     }
   },
 
@@ -44,7 +42,7 @@ export default {
         // response is the response object, response.results holds the documents
         console.log(response.results)
 
-        this.newsData = response.results
+        this.posts = response.results
         });
 
         setTimeout(() => {

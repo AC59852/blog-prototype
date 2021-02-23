@@ -2,7 +2,7 @@
   <div class="homeIntro">
       <div class="topText">
         <h2>Hello, Person!</h2>
-        <h1>Explore the news of today</h1>
+        <h1>Explore the opinions of today</h1>
       </div>
       <div class="weather">
           <img src="/img/svgs/cloud-snow.svg" alt="Image of Weather">
