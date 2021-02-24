@@ -41,17 +41,17 @@
         margin: 3% 0;
 
         .topArticle {
-            width: 85%;
+            width: 90%;
             margin: 0 auto 8%;
             background-color: white;
-            box-shadow: 0 4px 10px -2px #6f808fcc;
+            box-shadow: 0 4px 10px -2px #6f808f9f;
             display: flex;
             padding: 1%;
             border-radius: 15px;
             img {
                 width: 110px;
                 object-fit: cover;
-                height: 150px;
+                height: 140px;
                 border-radius: 15px;
             }
 
@@ -63,7 +63,6 @@
                     font-weight: 600;
                     font-size: 0.9rem;
                     margin-bottom: 5%;
-                    line-height: 1.1rem;
                 }
 
                 span {
@@ -87,19 +86,20 @@
             margin-bottom: 3%;
             margin-left: 7.5%;
             line-height: 1.8rem;
-            width: 90%;
         }
         .articlesWrapper {
             display: flex;
             flex-direction: column;
             .article {
+                margin: 0 auto;
                 width: 80%;
-                margin: 0 auto 8%;
-                height: 300px;
+                height: 325px;
                 background-color: #ffffff;
                 border-radius: 10px;
                 box-shadow: 0 4px 10px -4px #6f808f9f;
-                text-decoration: none; 
+                text-decoration: none;
+                margin-bottom: 8%;
+                overflow: hidden;
 
                 &:nth-child(n+5) {
                     display: none;
@@ -113,7 +113,6 @@
                     margin-top: 4.5%;
                     object-fit: cover;
                     object-position: top;
-                    align-items: flex-start;
                 }
                 h2 {
                     font-size: 1rem;
@@ -127,7 +126,7 @@
                     margin: 2% auto 0;
                     font-family: $body-font;
                     font-size: 0.9rem;
-                    color: #474747;
+                    color: #585858c5;
                     line-height: 1.2rem;
                 }
             }

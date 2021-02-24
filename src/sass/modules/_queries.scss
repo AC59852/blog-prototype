@@ -17,6 +17,22 @@
         }
         #topArticles {
             margin: 8% 0 6%;
+
+            .topArticle {
+                img {
+                    width: 120px;
+                }
+                .topArticleText {
+                    h3 {
+                        font-size: 1rem;
+                    }
+
+                    span {
+                        font-size: 0.9rem;
+                        line-height: 1.3rem;
+                    }
+                }
+            }
         }
         .homeArticles {
             h2:nth-child(1) {
@@ -30,6 +46,7 @@
                     width: 190px;
                     margin: 0 4% 8% 2%;
                     flex: 0 0 auto;
+                    height: 317px;
 
                     img {
                         width: 180px;
@@ -39,9 +56,43 @@
             }
         }
     }
+
+    .blogPost {
+        .postWrapper {
+            .postSmall {
+                h1 {
+                    font-size: 2.6rem;
+                    line-height: 3rem;
+                }
+
+                div {
+                    h2, h3, h4, h5 {
+                        font-size: 1.45rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        line-height: 1.38rem;
+                    }
+                }
+
+                .postPreview {
+                    p {
+                        font-size: 0.95rem;
+                        line-height: 1.3rem;
+                    }
+                }
+            }
+
+            .postImage {
+                width: 93%;
+                height: 220px;
+            }
+        }
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
     #topNav {
         .navCon {
             ul {
@@ -217,13 +268,11 @@
                     width: 125px;
                 }
 
-                h3 {
-                   font-size: 1rem;
-                   margin-bottom: 5%;
-                }
-
-                p {
-                   font-size: 0.82rem; 
+                .topArticleText {
+                    h3 {
+                        font-size: 1.1rem;
+                        margin-bottom: 5%;
+                     }
                 }
             }
         }
@@ -245,62 +294,59 @@
     }
 }
 
-@media screen and (min-width: 1600px) {
-    #container {
-        width: 95%;
-        height: 95vh;
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        margin: 0;
+@media screen and (min-width: 1300px) {
+    .blogPost {
+        .postWrapper {
+            margin-top: 5%;
+            margin-bottom: 3%;
+            .postSmall {
+                width: 62.5rem;
     
-          #routerWrapper {
-            margin-top: 0;
-            width: 99%;
-            height: 99%;
-            overflow: auto;
-            scrollbar-width: thin;
-          }
-    }
-
-
-    .page {
-        padding-left: 115px !important;
-    }
-
-    header {
-        width: 100px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-        height: 95%;
-        top: 2%;
-        left: 2.5%;
-        overflow:hidden;
-        box-shadow: 5px 0 10px -5px rgba(51, 51, 51, 0.308);
-    }
+                h1 {
+                    font-size: 4.25rem;
+                    line-height: 5.25rem;
+                    width: 65%;
+                    margin: 0 auto;
+                }
     
-    #topNav {
-        flex-direction: column;
+                div {
+                    p, h1, h2, h3, h4, h5 {
+                        margin: 0 auto 2%;
+                        font-size: 0.98rem;
+                        line-height: 1.6rem;
+                    }
     
-        .navCon {
-            margin-top: 10%;
-            
-            ul {
-                display: block;
-                li {
-                    width: 28px;
-                    margin: 40px auto;
+                    h1, h2, h3, h4, h5 {
+                        font-size: 1.6rem;
+                        margin-top: 4%;
+                    }
+                }
+    
+                .postPreview {
+                    p {
+                      width: 70%;
+                      line-height: 1.5rem;
+                      font-size: 1rem;
+                      margin: 2% auto 5%;
+                    }
                 }
             }
-        }
     
-        .settingsBtn {
-            width: 30px;
-            top: 93%;
-            right: 50%;
-            transform: translateX(50%);
+            .postImage {
+                width: 85%;
+                margin: 0 auto 4%;
+                height: 550px;
+                border-radius: 8px;
+            }
+    
+            .postImage2 {
+                margin-top: 5%;
+            }
         }
     }
+}
+
+@media screen and (min-width: 1600px) {
 
     #home {
         margin-bottom: 2%;
@@ -357,7 +403,6 @@
     
         #topArticles {
             margin: 4% 0 4% 2.5%;
-            flex-direction: row;
             justify-content: normal;
             .topArticle {
                 width: 350px;
@@ -398,11 +443,11 @@
             }
             .articlesWrapper {
                 flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: normal;
                 overflow-x: initial;
                 .article {
                     width: 220px;
-                    height: 310px;
+                    height: 315px;
                     border-radius: 15px;
                     box-shadow: 0 4px 10px -2px #6f808f9f;
                     margin-bottom: 0;
@@ -419,8 +464,9 @@
                     }
                     h2 {
                         font-size: 1.1rem;
-                        margin-top: 8%;
+                        margin-top: 5%;
                         margin-left: 4%;
+                        width: 90%;
                     }
         
                     p {
@@ -436,49 +482,24 @@
 
     .blogPost {
         .postWrapper {
-            margin-top: 5%;
-            margin-bottom: 3%;
-            .postSmall {
-                width: 62.5rem;
-    
-                h1 {
-                    font-size: 4.25rem;
-                    line-height: 5.25rem;
-                    width: 65%;
-                }
-    
-                div {
-                    p, h1, h2, h3, h4, h5 {
-                        margin: 0 auto 2%;
-                        font-size: 0.98rem;
-                        line-height: 1.6rem;
-                    }
-    
-                    h1, h2, h3, h4, h5 {
-                        font-size: 1.6rem;
-                        margin-top: 4%;
-                    }
-                }
-    
-                .postPreview {
-                    p {
-                      width: 80%;
-                      line-height: 1.5rem;
-                      font-size: 1rem;
-                      margin-top: 0;
-                    }
-                }
-            }
-    
             .postImage {
                 width: 75%;
-                margin: 0 auto 4%;
                 height: 650px;
-                border-radius: 8px;
             }
-    
-            .postImage2 {
-                margin-top: 5%;
+
+            .postSmall {
+                h1 {
+                    margin: 0 0 1%;
+                }
+
+                .postPreview {
+                    p {
+                        width: 80%;
+                        margin-left: 0;
+                        margin-right: 0;
+                        margin-top: 1%;
+                    }
+                }
             }
         }
     }

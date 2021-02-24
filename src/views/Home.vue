@@ -3,8 +3,12 @@
     <HomeIntro />
     <section class="homeArticles" id="articlesOne">
       <h2>Featured Tech Blog Posts</h2>
-      <div class="articlesWrapper">
-        <HomeArticles v-for="article in techArticles" :key="article.id" :article="article"/>
+      <div class="articlesWrapper" id="articleWrapper1">
+        <router-link :to="'/post/' + techPost.uid" v-for="techPost in techArticles" :techPost="techPost" :key="techPost.uid" class="article" >
+          <prismic-image :field="techPost.data.image" class="test" :id="'postImage' + techPost.uid"/>
+          <h2>{{ $prismic.richTextAsPlain(techPost.data.title) }}</h2>
+          <prismic-rich-text :class="'firstPara'" :field="techPost.data.preview_text"/>
+        </router-link>
       </div>
     </section>
     <section id="topArticles">
@@ -12,8 +16,12 @@
     </section>
     <section class="homeArticles" id="articlesTwo">
       <h2>Featured Video Game Blog Posts</h2>
-      <div class="articlesWrapper">
-        <HomeArticles v-for="article in gameArticles" :key="article.id" :article="article"/>
+      <div class="articlesWrapper" id="articleWrapper2">
+        <router-link :to="'/post/' + gamePost.uid" v-for="gamePost in gameArticles" :gamePost="gamePost" :key="gamePost.uid" class="article" >
+          <prismic-image :field="gamePost.data.image" class="test" :id="'postImage' + gamePost.uid"/>
+          <h2>{{ $prismic.richTextAsPlain(gamePost.data.title) }}</h2>
+          <prismic-rich-text :class="'firstPara'" :field="gamePost.data.preview_text"/>
+        </router-link>
       </div>
     </section>
   </section>
@@ -22,7 +30,7 @@
 <script>
 // @ is an alias to /src
 import HomeIntro from '@/components/home/HomeIntro.vue';
-import HomeArticles from '@/components/home/HomeArticles.vue';
+// import HomeArticles from '@/components/home/HomeArticles.vue';
 import TopArticles from '@/components/home/TopArticles.vue';
 
 export default {
@@ -30,23 +38,9 @@ export default {
 
   data() {
     return {
-      techArticles: [
-        {id: 1, title: 'Lorem Ipsum Dolonar Set Amit', img: 'tech1', tag: 'tech', previewDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '},
-        {id: 2, title: 'Tech Blog Post Two', img: 'tech2', tag: 'tech', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 3, title: 'Tech Blog Post Three', img: 'tech3', tag: 'tech', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 4, title: 'Tech Blog Post Four', img: 'tech4', tag: 'tech', previewDesc: 'This is a small small preview description of the blog post'},
-        {id: 5, title: 'Tech Blog Post Five', img: 'tech2', tag: 'tech', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 6, title: 'Tech Blog Post Six', img: 'tech1', tag: 'tech', previewDesc: 'This is a small preview description of the blog post'},
-      ],
+      techArticles: [],
 
-      gameArticles: [
-        {id: 1, title: 'Video Game Blog Post One', img: 'games1', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 2, title: 'Video Game Blog Post Two', img: 'games2', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 3, title: 'Video Game Blog Post Three', img: 'games3', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 4, title: 'Video Game Blog Post Four', img: 'games4', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 5, title: 'Video Game Blog Post Five', img: 'games2', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-        {id: 6, title: 'Video Game Blog Post Six', img: 'games3', tag: 'game', previewDesc: 'This is a small preview description of the blog post'},
-      ],
+      gameArticles: [],
 
       topArticles: [
         {id: 1, title: 'Top Blog Post One', img: 'games3', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', tag: 'game'},
@@ -55,10 +49,53 @@ export default {
       ],
     }
   },
+
+  mounted() {
+    this.getTechPosts();
+    this.getVideoGamePosts();
+
+    setTimeout(() => {
+            let firstPara = document.querySelectorAll(".firstPara p");
+
+            firstPara.forEach(para => {
+              const textLimit = 125
+
+                 const limitedText = para.innerText.substr(0, textLimit)
+
+                if (para.innerText.length > textLimit) {
+
+                  para.innerText = limitedText.substr(0, limitedText.lastIndexOf(' ')) + '...';
+                }
+
+            })
+        }, 700);
+  },
+
+  methods: {
+    getVideoGamePosts() {
+      this.$prismic.client.query(
+      this.$prismic.Predicates.at('document.tags', ['game']), {orderings: '[document.last_publication_date desc]'}
+        ).then((response) => {
+        // response is the response object, response.results holds the documents
+
+        this.gameArticles = response.results
+        });
+    },
+
+    getTechPosts() {
+      this.$prismic.client.query(
+      this.$prismic.Predicates.at('document.tags', ['tech']), {orderings: '[document.last_publication_date desc]'}
+        ).then((response) => {
+        // response is the response object, response.results holds the documents
+
+        this.techArticles = response.results
+        });
+    },
+  },
   
   components: {
     HomeIntro: HomeIntro,
-    HomeArticles: HomeArticles,
+    // HomeArticles: HomeArticles,
     TopArticles: TopArticles
   }
 }
