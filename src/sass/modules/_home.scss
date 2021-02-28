@@ -101,6 +101,8 @@
                 margin-bottom: 8%;
                 overflow: hidden;
 
+                // There's a lot of content that will be displayed, which feels overwhelming
+                // quickly, so just hide anything after the 4th box
                 &:nth-child(n+5) {
                     display: none;
                 }
