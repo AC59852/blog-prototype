@@ -1,3 +1,35 @@
+@media screen and (min-width: 375px) {
+    #topNav {
+        .navCon {
+            ul {
+                width: 85%;
+                margin: 0 auto;
+            }
+        }
+    }
+    #home {
+        .homeArticles {
+            .articlesWrapper {
+                .article {
+                    p {
+                        width: 86%;
+                    }
+                }
+            }
+        }
+        #topArticles {
+            .topArticle {
+                .topArticleText {
+                    span {
+                        font-size: 0.9rem;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 411px) {
     #home {
         margin-bottom: 10%;
@@ -61,18 +93,19 @@
         .postWrapper {
             .postSmall {
                 h1 {
-                    font-size: 2.6rem;
-                    line-height: 3rem;
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;
                 }
 
                 div {
                     h2, h3, h4, h5 {
-                        font-size: 1.45rem;
+                        font-size: 1.7rem;
+                        line-height: 2rem;
                     }
 
                     p {
-                        font-size: 1rem;
-                        line-height: 1.38rem;
+                        font-size: 1.05rem;
+                        line-height: 1.45rem;
                     }
                 }
 
