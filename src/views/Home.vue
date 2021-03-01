@@ -95,10 +95,9 @@ export default {
       // Query function to filter for 'game' tag and sort it based on its post date
       // in descending order
       this.$prismic.client.query(
-      this.$prismic.Predicates.at('document.tags', ['game']), {orderings: '[document.last_publication_date desc]'}
+      this.$prismic.Predicates.at('document.tags', ['game']), {orderings: '[document.last_publication_date desc]', pageSize : 6}
         ).then((response) => {
         // response is the response object, response.results holds the documents
-
 
         // Set the gameArticles array to the results from the fetch call
         this.gameArticles = response.results
@@ -111,7 +110,7 @@ export default {
       // Query function to filter for 'tech' tag and sort it based on its post date
       // in descending order
       this.$prismic.client.query(
-      this.$prismic.Predicates.at('document.tags', ['tech']), {orderings: '[document.last_publication_date desc]'}
+      this.$prismic.Predicates.at('document.tags', ['tech']), {orderings: '[document.last_publication_date desc]', pageSize : 6}
         ).then((response) => {
         // response is the response object, response.results holds the documents
 
