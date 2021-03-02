@@ -11,7 +11,7 @@ module.exports = {
         favicon16: "img/icons/favicon-16x16.png",
         appleTouchIcon: "img/icons/apple-touch-icon.png",
         maskIcon: "img/icons/safari-pinned-tab.svg",
-        msTileImage: "img/icons/msapplication-icon-144x144.png",
+        msTileImage: "img/icons/mstile-144x144.png",
         },
         manifestOptions: {
         icons: [
@@ -31,7 +31,7 @@ module.exports = {
         type: "image/png",
         },
         {
-        src: "./img/icons/msapplication-icon-144x144.png",
+        src: "./img/icons/mstile-144x144.png",
         sizes: "144x144",
         type: "image/png",
         },
