@@ -18,6 +18,16 @@ export default {
     
   },
 
+  mounted() {
+
+    if(localStorage.getItem("theme") == 'dark') {
+      console.log("darkmode on")
+      document.querySelector("body").classList.add("darkmode")
+    } else {
+      console.log("darkmode off")
+    }
+  },
+
   components: {
     Navigation: Navigation
   }
