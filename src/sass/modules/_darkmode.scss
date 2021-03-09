@@ -1,0 +1,76 @@
+.darkmode {
+    background-color: #080808;
+
+    #app {
+        #topNav {
+            ul {
+                li {
+                    a {
+                        img {
+                            filter: brightness(0.9);
+                        }
+                    }
+                }
+            }
+
+            .settingsBtn {
+                img {
+                    filter: brightness(0.9);
+                }
+            }
+        }
+        header {
+            background-color: #121212;
+            box-shadow: none;
+        }
+        #container {
+            background-color: #101010;
+            box-shadow: none;
+
+            .weatherTemp {
+                color: white;
+            }
+
+            .weatherCity {
+                div:nth-child(2) {
+                    color: white;
+                }
+            }
+
+            h1 { color: white; }
+
+            #topArticles {
+                .topArticle {
+                    background-color: #141414;
+                    box-shadow: none;
+
+                    h3 {
+                        color: white;
+                    }
+
+                    span {
+                        color: rgba(161, 161, 161, 0.733);
+                    }
+
+                }
+            }
+
+            .homeArticles {
+                h2 {
+                    color: white;
+                }
+
+                .articlesWrapper {
+                    a { 
+                        background-color: #141414; 
+                        box-shadow: none;
+                        
+                        p {
+                            color: rgba(161, 161, 161, 0.733);
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}

@@ -36,6 +36,18 @@ const anotherHtmlSerializer = function (type, element, content, children) {
 
 export default {
   name: 'BlogPost',
+  metaInfo() {
+    return {
+     title: this.pageTitle,
+     meta: [
+       {
+         vmid: "description",
+         name: "description",
+         content: this.pageDesc
+       }
+     ]
+    }
+  },
   data () {
     return {
       anotherHtmlSerializer,
@@ -48,7 +60,10 @@ export default {
         richContent4: {},
         image1: {},
         image2: {}
-      }
+      },
+
+      pageTitle: undefined,
+      pageDesc: undefined
     };
   },
   methods: {
@@ -63,6 +78,11 @@ export default {
           this.fields.richContent2 = document.data.text_block_2;
           this.fields.richContent3 = document.data.text_block_3;
           this.fields.richContent4 = document.data.text_block_4;
+
+          this.pageTitle = document.data.title[0].text
+          this.pageDesc = document.data.preview_text[0].text
+
+          console.log(this.pageDesc)
         })
     }
   },

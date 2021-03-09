@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Feed from '../views/Feed.vue'
 import Posts from '../views/Posts.vue'
+import Settings from '../views/Settings.vue'
 import PostSpecific from '../views/PostSpecific.vue'
 
 Vue.use(VueRouter)
@@ -24,6 +25,11 @@ const routes = [
     component: Posts
   },
   {
+    path: '/settings',
+    name: 'settings',
+    component: Settings
+  },
+  {
     path: '/post/:uid',
     name: 'post-specific',
     component: PostSpecific
@@ -31,7 +37,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

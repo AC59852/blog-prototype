@@ -1,4 +1,16 @@
+require = require('esm')(module);
+
 module.exports = {
+    pluginOptions: {
+        sitemap: {
+            urls: [
+                'https://subjective-speech.web.app',
+                'https://subjective-speech.web.app/feed',
+                'https://subjective-speech.web.app/trending',
+                'https://subjective-speech.web.app/discover'
+            ]
+        }
+    },
     pwa: {
         name: "Subjective Speech",
         themeColor: "#141414",
