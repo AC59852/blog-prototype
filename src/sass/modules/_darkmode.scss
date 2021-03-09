@@ -71,6 +71,20 @@
                     }
                 }
             }
-        }   
+        }
+        
+        #feed {
+            .feedContent {
+                .feedFilterBtns {
+                    button {
+                        color: white;
+
+                        &::after {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

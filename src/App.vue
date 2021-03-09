@@ -24,7 +24,7 @@ export default {
       console.log("darkmode on")
       document.querySelector("body").classList.add("darkmode")
     } else {
-      console.log("darkmode off")
+      localStorage.setItem("theme", "light")
     }
   },
 

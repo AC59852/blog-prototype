@@ -12,7 +12,9 @@
           <button @click="changeFilterContent($event)" class="FilterBtn">tech</button>
           <button @click="changeFilterContent($event)" class="FilterBtn">game</button>
         </div>
-        <FeedArticle v-for="article in fields.articles" :key="article.uid" :article="article"/>
+        <div class="feedContainer">
+            <FeedArticle v-for="article in fields.articles" :key="article.uid" :article="article"/>
+        </div>
       </section>
   </section>
 </template>
@@ -46,9 +48,10 @@ export default {
 
         changeFilterContent(e) {
             let tag = e.target.innerText.split(" ")[0]
+            let resTag = tag.toLowerCase()
 
             this.$prismic.client.query(
-                this.$prismic.Predicates.at('document.tags', [tag]), {orderings: '[document.last_publication_date desc]'}
+                this.$prismic.Predicates.at('document.tags', [resTag]), {orderings: '[document.last_publication_date desc]'}
             )
             .then((res) => {
                 this.fields.articles = res.results
